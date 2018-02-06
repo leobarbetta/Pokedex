@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Pokedex.Views.CriarPokemonPage"
+             Title="Novo Pokémon">
+
+    <ContentPage.Content>
+        <StackLayout Padding="15" VerticalOptions="Center">
+            
+            <Label HorizontalTextAlignment="Start" Text="Numero:"></Label>
+            <Entry Text="{Binding Pokemon.Numero}"></Entry>
+
+            <Label HorizontalTextAlignment="Start" Text="Nome:"></Label>
+            <Entry Text="{Binding Pokemon.Nome}"></Entry>
+
+            <Label HorizontalTextAlignment="Start" Text="Descricao:"></Label>
+            <Editor Text="{Binding Pokemon.Descricao}"></Editor>
+
+            <Label HorizontalTextAlignment="Start" Text="É primeira fase?"></Label>
+            <Switch IsToggled="{Binding Pokemon.IsPrimeiraFase}" HorizontalOptions="Start" HeightRequest="50"></Switch>
+
+            <Button Text="Salvar" Command="{Binding SalvarCommand}"></Button>
+            
+        </StackLayout>
+    </ContentPage.Content>
+  
+</ContentPage>
